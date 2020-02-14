@@ -14,7 +14,7 @@ const Navbar = props => {
   return (
 <StyledNav>
     <nav className="navbar">
-      <h1>Women'</h1>
+      <h1 className="world-cup">Women's World Cup</h1>
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}
@@ -56,11 +56,15 @@ const StyledNav = styled.div`
   justify-content: space-between;
   padding: 0 3%;
   width: 100%;
+  
   -webkit-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
   box-shadow: 0px 2px 15px -8px rgba(0, 0, 0, 0.42);
 }
-
+.world-cup {
+  text-align: center;
+  margin-left: 140px;
+}
 
 `;
 

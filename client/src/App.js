@@ -36,8 +36,7 @@ class App extends React.Component {
       
         
         <div className="App">
-          <h1>Women's World Cup</h1>
-
+          
           {this.state.players.map(player => {
             return (
               <div key = {player.id}>
@@ -64,12 +63,6 @@ const StyledDiv  = styled.div`
   padding: 20px; 
   color: white;
   margin-bottom: 5px
-
-
-
-
-
-  
   
 
 h2, h1 {
