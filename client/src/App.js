@@ -1,61 +1,64 @@
-import React from 'react';
+import React from "react";
 
-import './App.css';
+// import "./App.css";
 import axios from "axios";
+import styled from "styled-components";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
-     data: [],
-
+    this.state = {
+      data: [],
+      players: []
     };
   }
-  
-
 
   componentDidMount() {
- debugger
-
-axios.get ('http://localhost:5000/api/players')
+    axios
+      .get("http://localhost:5000/api/players")
 
       .then(response => {
-        this.setState({data: response.data});
-        debugger
-// console.log(this.state.data);
-// console.log(response.data)
-     })
-     .catch(error => { 
+        this.setState({ players: response.data });
 
-      console.log(error);
-     
+        console.log(this.state.players);
+      })
+      .catch(error => {
+        console.log(error);
       });
-    }
+  }
 
   render() {
-
     return (
-      <div className="App">
-        Hello
-      </div>
+      
+        <div className="App">
+          <h1>Women's World Cup</h1>
+
+          {this.state.players.map(player => {
+            return (
+              <div>
+                <p>Name: {player.name}</p>
+                <p>Country: {player.country}</p>
+                <p>Searches: {player.searches}</p>
+                <p>id: {player.id}</p>
+              </div>
+            );
+          })}
+        </div>
+        
     );
-    }
-  
+  }
 }
-  
 
+const StyledDiv = styled.div`
+  .App {
+    background: gray;
+    margin: 0 300px;
+  }
 
-
-
-
-
+  p {
+    text-align: center;
+    color: white;
+  }
+`;
 
 export default App;
-
-
-
-
-
-
-
- 
