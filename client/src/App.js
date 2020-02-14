@@ -3,12 +3,13 @@ import React from "react";
 // import "./App.css";
 import axios from "axios";
 import styled from "styled-components";
+import Navbar from "./components/components/Navbar";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      
       players: []
     };
   }
@@ -29,36 +30,55 @@ class App extends React.Component {
 
   render() {
     return (
+      <StyledDiv>
+        <Navbar/>
+         
       
+        
         <div className="App">
           <h1>Women's World Cup</h1>
 
           {this.state.players.map(player => {
             return (
-              <div>
-                <p>Name: {player.name}</p>
-                <p>Country: {player.country}</p>
-                <p>Searches: {player.searches}</p>
-                <p>id: {player.id}</p>
+              <div key = {player.id}>
+                <h2>Name: {player.name}</h2>
+                <h2>Country: {player.country}</h2>
+                <h2>Searches: {player.searches}</h2>
+                <h2>id: {player.id}</h2>
               </div>
             );
           })}
         </div>
-        
+        </StyledDiv> 
     );
   }
 }
 
-const StyledDiv = styled.div`
-  .App {
-    background: gray;
-    margin: 0 300px;
-  }
+const StyledDiv  = styled.div`
+ width: 600px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: blueviolet;
+  text-align: center;
+  padding: 20px; 
+  color: white;
+  margin-bottom: 5px
 
-  p {
-    text-align: center;
-    color: white;
-  }
+
+
+
+
+  
+  
+
+h2, h1 {
+  text-align: center;
+  color: white
+}
+
 `;
+
+
 
 export default App;
