@@ -5,6 +5,7 @@ import axios from "axios";
 import styled from "styled-components";
 import Navbar from "./components/components/Navbar";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,24 +15,28 @@ class App extends React.Component {
     };
   }
 
+
   componentDidMount() {
     axios
       .get("http://localhost:5000/api/players")
-
+      
       .then(response => {
+     
+       
         this.setState({ players: response.data });
-
-        console.log(this.state.players);
+    
+       
       })
       .catch(error => {
-        console.log(error);
+      
+        alert(error.message);
       });
   }
 
   render() {
     return (
       <StyledDiv>
-        <Navbar/>
+        <Navbar />
          
       
         

@@ -16,10 +16,7 @@ const Navbar = props => {
     <nav className="navbar">
       <h1 className="world-cup">Women's World Cup</h1>
       <div className="dark-mode__toggle">
-        <div
-          onClick={toggleMode}
-          className={darkMode ? "toggle toggled" : "toggle"}
-        />
+        <div onlick={toggleMode} className={darkMode ? "toggle toggled" : "toggle"}/>
       </div>
     </nav>
     </StyledNav>
