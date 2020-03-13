@@ -30,18 +30,29 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 - [ x] Name three lifecycle methods and their purposes.
 Three lifecycle methods and their purposes
 (i) render()
+The render() method is the most used lifecycle method. You will see it in all React classes. This is because render() is the only required method within a class component in React.
+As the name suggests it handles the rendering of your component to the UI. It happens during the mounting and updating of your component.
+(ii)componentDidMount()
 
+Now your component has been mounted and ready, that’s when the next React lifecycle method componentDidMount() comes in play.
 
+componentDidMount() is called as soon as the component is mounted and ready. This is a good place to initiate API calls, if you need to load data from a remote endpoint.
+
+Unlike the render() method, componentDidMount() allows the use of setState(). Calling the setState() here will update state and cause another rendering but it will happen before the browser updates the UI. This is to ensure that the user will not see any UI updates with the double rendering.
 (iii)componentDidUpdate()
+This lifecycle method is invoked as soon as the updating happens. The most common use case for the componentDidUpdate() method is updating the DOM in response to prop or state changes.
 
+You can call setState() in this lifecycle, but keep in mind that you will need to wrap it in a condition to check for state or prop changes from previous state. Incorrect usage of setState() can lead to an infinite loop.
 
 - [ x] What is the purpose of a custom hook?
+A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks. 
 
+It is a mechanism to reuse stateful logic (such as setting up a subscription and remembering the current value), but every time you use a custom Hook, all state and effects inside of it are fully isolated.
 
 
 - [ x] Why is it important to test our apps?
 
-
+Testing minimizes the risk of bugs finding their way into production code. Testing is NOT optional. Testing should be a part of every developer’s workflow. A feature is not done until it is fully tested! In direct contrast to manual testing, automated testing significantly reduces the manpower and margin for error needed to confidently ship a product. Though it can’t entirely remove manual testing from the process, it certainly helps.
 
 
 
