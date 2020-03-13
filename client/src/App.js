@@ -59,11 +59,11 @@ class App extends React.Component {
 }
 
 const StyledDiv  = styled.div`
- width: 600px;
+ width: 800px;
   margin: 0 auto;
   border: 1px solid black;
   border-radius: 15px;
-  background-color: blueviolet;
+  background-color: violet;
   text-align: center;
   padding: 20px; 
   color: white;
