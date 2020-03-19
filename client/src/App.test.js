@@ -3,10 +3,6 @@ import *  as rtl from '@testing-library/react';
 import App from './App';
 
 
-
-
-
-
 describe ("App", () =>{
 
   it ("test if when multiplying two numbers the correct answer is returned", ()=>{
@@ -61,6 +57,7 @@ expect((-2)**3).not.toBe(6)
 expect(3**3).toBe(27)
 expect(3**3).not.toBe(6)
 })
+
 
 
 

@@ -39,6 +39,10 @@ Now your component has been mounted and ready, that’s when the next React life
 componentDidMount() is called as soon as the component is mounted and ready. This is a good place to initiate API calls, if you need to load data from a remote endpoint.
 
 Unlike the render() method, componentDidMount() allows the use of setState(). Calling the setState() here will update state and cause another rendering but it will happen before the browser updates the UI. This is to ensure that the user will not see any UI updates with the double rendering.
+(iii)componentDidUpdate()
+This lifecycle method is invoked as soon as the updating happens. The most common use case for the componentDidUpdate() method is updating the DOM in response to prop or state changes.
+
+You can call setState() in this lifecycle, but keep in mind that you will need to wrap it in a condition to check for state or prop changes from previous state. Incorrect usage of setState() can lead to an infinite loop.
 
 - [ x] What is the purpose of a custom hook?
 A custom Hook is a JavaScript function whose name starts with ”use” and that may call other Hooks. 
